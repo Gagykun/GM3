@@ -1,7 +1,2 @@
-colorama
-requests
-sys
-time
-os
-zipfile
-shutil
+requests==2.25.1
+colorama==0.4.4
