@@ -1,0 +1,17 @@
+/__pycache__/
+# Ignores python3 cache
+
+/build/
+# Ignores build files
+
+/dist/
+# Ignores precompiled libraries
+
+/gitTools/
+# Ignores personal development tools
+
+Compile.bat
+# Ignores compiler
+
+ign.txt
+# Ignores developmental file
