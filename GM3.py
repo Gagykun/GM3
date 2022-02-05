@@ -56,7 +56,7 @@ if os.path.exists("GMCMI"):
         try:
             print(Fore.RED + "Potentially corrupt installation detected[2]. Attempting repairs...")
             print(Style.RESET_ALL)
-            url = f'http://10.0.0.60:34197/ver.txt'
+            url = f'http://gagy.us.to:34197/ver.txt'
             r = requests.get(url, allow_redirects=True)
             open("ver.txt", 'wb').write(r.content)
         except requests.ConnectionError:
@@ -98,7 +98,7 @@ print(Style.RESET_ALL)
 
 try: # try loop for active server connection, if fail, exit program
     os.chdir(f"{rootDir}GMCMI//inf")
-    url = f'http://10.0.0.60:34197/ver.txt'
+    url = f'http://gagy.us.to:34197/ver.txt'
     r = requests.get(url, allow_redirects=True)
     open("ver.txt", 'wb').write(r.content)
     f = open("ver.txt", "r")
@@ -114,9 +114,8 @@ try:
     if ver == curVer: # Compares what version we have installed
         print(Fore.GREEN+"You are on the latest version.")
         print(Style.RESET_ALL)
-        print(Fore.MAGENTA + f"Server: {ver}" + Fore.GREEN + f" - Client: {curVer}")
+        print(Fore.MAGENTA + f"Server: {ver}" + Fore.GREEN + " - " + f"Client: {curVer}")
         print(Style.RESET_ALL)
-        os.remove("ver.txt")
         print("Closing in 5 seconds")
         time.sleep(5)
         sys.exit()
@@ -129,13 +128,13 @@ print(Style.RESET_ALL)
 print(Fore.YELLOW + "Downloading mods...")
 print(Style.RESET_ALL)
 os.chdir(f"{rootDir}GMCMI")
-url = f'http://10.0.0.60:34197/mods.zip'
+url = f'http://gagy.us.to:34197/mods.zip'
 r = requests.get(url, allow_redirects=True)
 open("mods.zip", 'wb').write(r.content)
 print(Fore.YELLOW + "Extracting files... This may take a while depending on your systems specifications...")
 print(Style.RESET_ALL)
 try:
-    os.chdir("{rootDir}/mods")
+    os.chdir(f"{rootDir}mods")
 except Exception:
     print(Fore.YELLOW + "You are missing the [mods] folder. We have created a mods folder for you but you must install minecraft forge yourself." + "\n" + "Resuming in 3 seconds.")
     print(Style.RESET_ALL)
